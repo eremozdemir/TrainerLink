@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athlete Drills</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .graph {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,10 +30,21 @@
     </header>
     <main>
         <h2>Assigned Drills</h2>
-        <p>Here you can view the drills assigned to you by your trainer.</p>
+        <div class="graph">
+            <h3>Progress Overview</h3>
+            <canvas id="progressChart" width="400" height="200"></canvas>
+        </div>
+        <button onclick="completeDrill()">Complete Drill</button>
     </main>
     <footer>
         <p>&copy; 2024 TrainerLink App. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Dummy function to simulate completing a drill
+        function completeDrill() {
+            alert('Drill completed!');
+        }
+    </script>
 </body>
 </html>

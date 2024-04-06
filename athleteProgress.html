@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athlete Progress</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .graph {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,10 +30,50 @@
     </header>
     <main>
         <h2>Progress Tracking</h2>
-        <p>Here you can track your progress.</p>
+        <div class="graph">
+            <h3>Drill Progress</h3>
+            <canvas id="drillProgressChart" width="400" height="200"></canvas>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 TrainerLink App. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Dummy function to simulate displaying progress
+        window.onload = function() {
+            var ctx = document.getElementById('drillProgressChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Drill 1', 'Drill 2', 'Drill 3'],
+                    datasets: [{
+                        label: 'Progress',
+                        data: [50, 75, 25],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        };
+    </script>
 </body>
 </html>
